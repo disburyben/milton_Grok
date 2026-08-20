@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premier Speedway · Warrnambool 3D Map</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="hud">
+        <header class="topbar">
+          <div class="brand">
+            <span class="eyebrow">Sungold Stadium · Allansford</span>
+            <h1>Premier Speedway</h1>
+            <span class="sub">Warrnambool · 410 m banked clay oval</span>
+          </div>
+          <div class="top-actions">
+            <button type="button" id="btn-night" class="chip">Night race</button>
+            <button type="button" id="btn-cars" class="chip on">Sprintcars</button>
+            <button type="button" id="btn-sat" class="chip on">Satellite</button>
+            <button type="button" id="btn-labels" class="chip on">Labels</button>
+          </div>
+        </header>
+
+        <aside class="views panel">
+          <h2>Camera</h2>
+          <button type="button" data-view="aerial" class="view-btn active">Aerial map</button>
+          <button type="button" data-view="grandstand" class="view-btn">Grandstand</button>
+          <button type="button" data-view="mtmax" class="view-btn">Mount Max</button>
+          <button type="button" data-view="pits" class="view-btn">Pit area</button>
+          <button type="button" data-view="t1" class="view-btn">Turn 1</button>
+          <button type="button" data-view="driver" class="view-btn">Driver cam</button>
+        </aside>
+
+        <aside class="info panel" id="info-panel">
+          <p class="kicker">Interactive 3D map</p>
+          <h2 id="info-title">Premier Speedway</h2>
+          <p id="info-body">
+            Click a marker or drag to orbit this georeferenced model of Premier
+            Speedway at Allansford, the home of the Grand Annual Sprintcar Classic.
+            Layout is built from OpenStreetMap footprints on live satellite imagery.
+          </p>
+          <dl class="facts">
+            <div><dt>Track</dt><dd>410 m clay oval</dd></div>
+            <div><dt>Address</dt><dd>10275 Princes Hwy</dd></div>
+            <div><dt>Sides</dt><dd>Warrnambool · Allansford</dd></div>
+            <div><dt>Coords</dt><dd>38.387°S 142.582°E</dd></div>
+          </dl>
+        </aside>
+
+        <div id="tooltip" hidden></div>
+
+        <footer class="status">
+          <div class="compass" id="compass"><span>N</span></div>
+          <div class="meta">
+            <span id="coord-readout">38.3871°S 142.5818°E</span>
+            <span class="sep">·</span>
+            <span>Drag orbit · Scroll zoom · Click markers</span>
+          </div>
+          <div class="attrib">
+            Map data © OpenStreetMap · Imagery © Esri
+          </div>
+        </footer>
+      </div>
+      <div id="loader">
+        <div class="loader-card">
+          <p class="eyebrow">Warrnambool</p>
+          <h1>Premier Speedway</h1>
+          <p>Building 3D map…</p>
+          <div class="bar"><span></span></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
