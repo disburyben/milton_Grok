@@ -106,6 +106,7 @@ export function createField(parent, curve, count = 8) {
   const cars = [];
   for (let i = 0; i < count; i++) {
     const car = createSprintcar(WING_COLOURS[i % WING_COLOURS.length], [2, 5, 7, 14, 17, 21, 42, 88][i]);
+    car.scale.setScalar(1.55);
     parent.add(car);
     cars.push({
       mesh: car,

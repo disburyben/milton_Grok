@@ -307,7 +307,11 @@ function addLightTowers(root, outerPts) {
     const head = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.5, 1.1), lamp);
     head.position.set(0, 21.4, 0);
     tower.add(pole, head);
-    tower.position.set(p.x * 1.18, 0, p.z * 1.18);
+    tower.position.set(
+      -5.6 + (p.x + 5.6) * 1.28,
+      0,
+      -2.1 + (p.z + 2.1) * 1.28
+    );
     root.add(tower);
   }
 }
@@ -405,7 +409,11 @@ function setupLights(scene, outerPts) {
   for (let i = 0; i < outerPts.length; i += step) {
     const p = outerPts[i];
     const light = new THREE.SpotLight(0xffe7b0, 0, 120, 0.7, 0.45, 1.1);
-    light.position.set(p.x * 1.18, 21, p.z * 1.18);
+    light.position.set(
+      -5.6 + (p.x + 5.6) * 1.28,
+      21,
+      -2.1 + (p.z + 2.1) * 1.28
+    );
     light.target.position.set(-5.6, 0, -2.1);
     scene.add(light, light.target);
     floods.push(light);

@@ -49,6 +49,7 @@ const world = buildWorld(scene, ORIGIN);
 world.setNight(false);
 
 const hud = bindHud({ world, camera, controls, scene, labelGroup });
+loader.classList.add("hide");
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
@@ -79,7 +80,6 @@ window.addEventListener("resize", () => {
 });
 
 const clock = new THREE.Clock();
-let ready = false;
 
 function animate() {
   requestAnimationFrame(animate);
@@ -90,10 +90,6 @@ function animate() {
   controls.update();
   renderer.render(scene, camera);
   labelRenderer.render(scene, camera);
-  if (!ready) {
-    ready = true;
-    loader.classList.add("hide");
-  }
 }
 
 animate();
