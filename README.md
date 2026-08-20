@@ -4,19 +4,34 @@ Interactive 3D map of **Premier Speedway (Sungold Stadium)** in Allansford, just
 
 The scene is georeferenced from OpenStreetMap footprints (track, buildings, roads, railway) and draped on Esri World Imagery satellite tiles.
 
-## Run locally
+## Open the map
+
+You cannot open `index.html` as a raw GitHub file. It needs a local web server (or GitHub Pages).
 
 ```bash
 npm install
-npm run dev
+npm start
 ```
 
-Then open the printed local URL (default `http://localhost:5173`).
+Then open **http://localhost:5173**.
+
+Without installing Vite globally:
 
 ```bash
-npm run build
-npm run preview
+npx --yes serve .
 ```
+
+Open the URL it prints (usually http://localhost:3000).
+
+### GitHub Pages
+
+After merging, enable Pages in the repo:
+
+1. Settings → Pages
+2. Source: **GitHub Actions**
+
+The workflow `.github/workflows/pages.yml` publishes the built map to  
+`https://disburyben.github.io/milton_Grok/`
 
 ## Controls
 
